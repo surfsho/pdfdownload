@@ -1,0 +1,518 @@
+{
+    "patient": {
+        "name": "JOHN DOE",
+        "first_name": "JOHN",
+        "last_name": "DOE",
+        "dob": "02/15/2011",
+        "member_id": "123456789",
+        "address": {
+            "street1": "123 CALIFORNIA ST",
+            "city": "SAN FRANCISCO",
+            "zip": "94101",
+            "state": "CA"
+        },
+        "coverage": {
+            "effective_date": "01/01/2020",
+            "status": "active"
+        }
+    },
+    "subscriber": {
+        "name": "JOHN DOE",
+        "first_name": "JOHN",
+        "last_name": "DOE",
+        "dob": "02/15/2011",
+        "member_id": "123456789",
+        "address": {
+            "street1": "123 CALIFORNIA ST",
+            "city": "SAN FRANCISCO",
+            "zip": "94101",
+            "state": "CA"
+        },
+        "coverage": {
+            "effective_date": "01/01/2020",
+            "status": "active"
+        }
+    },
+    "plan": {
+        "name": "ACME INC.",
+        "number": "1234567",
+        "type": "PRINCIPAL POS",
+        "group_number": "12345",
+        "state": "CA"
+    },
+    "deductible": [
+        {
+            "network": "in_network",
+            "category": "preventive",
+            "plan_period": "calendar",
+            "amount": "0.00",
+            "coverage_level": "individual"
+        },
+        {
+            "network": "in_network",
+            "category": "basic_and_major",
+            "plan_period": "calendar",
+            "amount": "50.00",
+            "coverage_level": "individual"
+        },
+        {
+            "network": "in_network",
+            "category": "preventive",
+            "plan_period": "remaining",
+            "amount": "0.00",
+            "coverage_level": "individual"
+        },
+        {
+            "network": "in_network",
+            "category": "basic_and_major",
+            "plan_period": "remaining",
+            "amount": "26.00",
+            "coverage_level": "individual"
+        },
+        {
+            "network": "in_network",
+            "category": "preventive",
+            "plan_period": "calendar",
+            "amount": "0.00",
+            "coverage_level": "family"
+        }
+    ],
+    "maximums": [
+       {
+            "network": "in_network",
+            "category": "preventive_basic_and_major",
+            "plan_period": "calendar",
+            "amount": "1500.00"
+        },
+        {
+            "network": "in_network",
+            "category": "preventive_basic_and_major",
+            "plan_period": "remaining",
+            "amount": "1470.00"
+        },
+        {
+            "network": "out_of_network",
+            "category": "preventive_basic_and_major",
+            "plan_period": "calendar",
+            "amount": "1500.00"
+        },
+        {
+            "network": "out_of_network",
+            "category": "preventive_basic_and_major",
+            "plan_period": "remaining",
+            "amount": "1470.00"
+        }
+    ],
+    "coinsurance": [
+        {
+            "network": "in_network",
+            "category": "preventive",
+            "plan_period": "calendar",
+            "percent": "100"
+        },
+        {
+            "network": "in_network",
+            "category": "basic",
+            "plan_period": "calendar",
+            "percent": "80"
+        },
+        {
+            "network": "in_network",
+            "category": "major",
+            "plan_period": "calendar",
+            "percent": "50"
+        },
+        {
+            "network": "in_network",
+            "category": "orthodontics",
+            "plan_period": "calendar",
+            "percent": "50"
+        },
+        {
+            "network": "out_of_network",
+            "category": "preventive",
+            "plan_period": "calendar",
+            "percent": "80"
+        },
+        {
+            "network": "out_of_network",
+            "category": "basic",
+            "plan_period": "calendar",
+            "percent": "40"
+        },
+        {
+            "network": "out_of_network",
+            "category": "major",
+            "plan_period": "calendar",
+            "percent": "20"
+        },
+        {
+            "network": "out_of_network",
+            "category": "orthodontics",
+            "plan_period": "calendar",
+            "percent": "50"
+        }
+        
+    ],
+    "limitations": [
+        {
+            "category": "preventive",
+            "service_type": "examinations",
+            "limitation": "2 per calendar year",
+            "limitation_applies_to": [
+                "D0120",
+                "D0145",
+                "D0150",
+                "D0160",
+                "D0170",
+                "D0180",
+                "D9430"
+            ],
+            "service_dates": [
+                {
+                    "procedure_code": "D0120",
+                    "service_date": "02/15/2020"
+                },
+                {
+                    "procedure_code": "D0150",
+                    "service_date": "02/15/2014"
+                },
+                {
+                    "procedure_code": "D0150",
+                    "service_date": "02/15/2019"
+                }
+            ],
+            "services_remaining": 1
+        },
+        {
+            "category": "preventive",
+            "service_type": "limited_examinations",
+            "limitation": "2 per calendar year",
+            "limitation_applies_to": [
+                "D0140"
+            ],
+            "service_dates": [
+                {
+                    "procedure_code": "D0120",
+                    "service_date": "02/15/2020"
+                },
+                {
+                    "procedure_code": "D0150",
+                    "service_date": "02/15/2014"
+                },
+                {
+                    "procedure_code": "D0150",
+                    "service_date": "02/15/2019"
+                }
+            ],
+            "services_remaining": 1,
+            "disclaimers": [
+                "Limited oral evaluation is considered with or without other procedures on same date of service."
+            ]
+        },
+        {
+            "category": "preventive",
+            "service_type": "full_mouth",
+            "limitation": "1 per 60 consecutive months to the exact day",
+            "limitation_applies_to": [
+                "D0210",
+                "D0330"
+            ],
+            "services_remaining": 1
+        },
+        {
+            "category": "preventive",
+            "service_type": "periapicals",
+            "limitation": "4 per calendar year",
+            "limitation_applies_to": [
+                "D0220",
+                "D0230"
+            ],
+            "service_dates": [
+                {
+                    "procedure_code": "D0210",
+                    "service_date": "02/15/2019"
+                },
+                {
+                    "procedure_code": "D0220",
+                    "service_date": "02/15/2019"
+                },
+                {
+                    "procedure_code": "D0230",
+                    "service_date": "02/15/2019"
+                }
+            ],
+            "services_remaining": 4
+        },
+        {
+            "category": "preventive",
+            "service_type": "bitewings",
+            "limitation": "1 per calendar year",
+            "limitation_applies_to": [
+                "D0270",
+                "D0272",
+                "D0273",
+                "D0274",
+                "D0277"
+            ],
+            "service_dates": [
+                {
+                    "procedure_code": "D0210",
+                    "service_date": "02/15/2019"
+                },
+                {
+                    "procedure_code": "D0272",
+                    "service_date": "02/16/2020"
+                }
+            ],
+            "services_remaining": 0
+        },
+        {
+            "category": "preventive",
+            "service_type": "prophylaxis",
+            "limitation": "2 per calendar year",
+            "limitation_applies_to": [
+                "D1110",
+                "D1120"
+            ],
+            "service_dates": [
+                {
+                    "procedure_code": "D1110",
+                    "service_date": "02/15/2019"
+                }
+            ],
+            "services_remaining": 2,
+            "disclaimers": [
+                "Not covered if less than 90 days have passed since active periodontal therapy was completed.",
+                "If under age 14, benefit limited to child prophylaxis (D1120)"
+            ]
+        },
+        {
+            "category": "preventive",
+            "service_type": "periodontal_maintenance",
+            "limitation": "2 per calendar year",
+            "limitation_applies_to": [
+                "D4910"
+            ],
+            "service_dates": [
+                {
+                    "procedure_code": "D1110",
+                    "service_date": "02/15/2019"
+                }
+            ],
+            "services_remaining": 2,
+            "disclaimers": [
+                "This procedure is only covered by us if at least 90 days have passed since the active periodontal therapy was completed."
+            ]
+        },
+        {
+            "category": "preventive",
+            "service_type": "fluoride",
+            "limitation": "1 per calendar year",
+            "limitation_applies_to": [
+                "D1208",
+                "D1206"
+            ],
+            "services_remaining": 1,
+            "disclaimers": [
+                "Covered for dependent children and adults. No age limitation."
+            ]
+        },
+        {
+            "category": "preventive",
+            "service_type": "sealants",
+            "limitation": "1 per 36 consecutive months to the exact day",
+            "limitation_applies_to": [
+                "D1351",
+                "D1352",
+                "D1353"
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "Covered for dependent children and adults. No age limitation.",
+                "Applicable only to the occlusal surface of first and second permanent molars."
+            ]
+        },
+        {
+            "category": "basic",
+            "service_type": "space_maintainers",
+            "limitation": "Covered once per site per lifetime",
+            "limitation_applies_to": [
+                "D1510",
+                "D1520",
+                "D1526",
+                "D1527",
+                "D1575",
+                "D1516",
+                "D1517"
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "Covered for dependent children and adults. No age limitation."
+            ]
+        },
+        {
+            "category": "basic",
+            "service_type": "fillings",
+            "limitation": "1 replacement every 24 months to the exact day",
+            "limitation_applies_to": [
+                "D2330",
+                "D2331",
+                "D2332",
+                "D2335",
+                "D2140",
+                "D2150",
+                "D2160",
+                "D2161",
+                "D2390",
+                "D2391",
+                "D2392",
+                "D2393",
+                "D2394"
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "Composites are considered at an amalgam rate for posterior teeth which includes molars and pre-molars (bicuspids).",
+                "Restorations replacing tooth structure lost from abrasion, attrition, abfraction and erosion are not covered.",
+                "These services are subject to Individual and/or Consultant review. See Submission Guidelines here: https://secure02.principal.com/publicvsupply/GetFile?fm=GP58750A&ty=PDF&EXT=.PDF"
+            ]
+        },
+        {
+            "category": "major",
+            "service_type": "crowns_and_onlays",
+            "limitation": "120 month replacement",
+            "limitation_applies_to": [
+                "D2710",
+                "D2712",
+                "D2720",
+                "D2721",
+                "D2722",
+                "D2740",
+                "D2750",
+                "D2751",
+                "D2752",
+                "D2780",
+                "D2781",
+                "D2782",
+                "D2783",
+                "D2790",
+                "D2791",
+                "D2792",
+                "D2794",
+                "D2542",
+                "D2543",
+                "D2544",
+                "D2642",
+                "D2643",
+                "D2644",
+                "D2662",
+                "D2663",
+                "D2664",
+                "D2753"
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "These services are subject to Individual and/or Consultant review. See Submission Guidelines here: https://secure02.principal.com/publicvsupply/GetFile?fm=GP58750A&ty=PDF&EXT=.PDF",
+                "Covered services are paid on seat date",
+                "Molars/Pre-molars are based upon the alternate benefit of a noble metal cast crown. Anterior teeth are based upon the alternate benefit of a porcelain fused to noble metal cast crown.",
+                "These codes are covered services only if placed to restore a tooth broken down due to tooth decay or injury resulting in the loss of tooth structure. (Injury does not include damage to teeth that results from chewing or biting food, substances or objects)."
+            ]
+        },
+        {
+            "category": "basic",
+            "service_type": "stainless_steel_crowns",
+            "limitation": "120 month replacement",
+            "limitation_applies_to": [
+                "D2929",
+                "D2930",
+                "D2931",
+                "D2932",
+                "D2933",
+                "D2934"
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "Crowns replacing tooth structure lost from abrasion, attrition, abfraction and erosion are not covered.",
+                "If used as a temporary, not covered",
+                "If a permanent crown replaces a stainless steel/resin/prefabricated crown at a later date but before replacement restrictions allow, all new charges will be reduced by those already paid."
+            ]
+        },
+        {
+            "category": "major",
+            "service_type": "crown_recements",
+            "limitation": "1 per 24 consecutive months to the exact day",
+            "limitation_applies_to": [
+                "D2920"
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "Covered only if done more than 12 months after initial insertion of crown/onlay"
+            ]
+        },
+        {
+            "category": "major",
+            "service_type": "buildups",
+            "limitation": "120 month replacement",
+            "limitation_applies_to": [
+                "D2950"
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "These services are subject to Individual and/or Consultant review. See Submission Guidelines here: https://secure02.principal.com/publicvsupply/GetFile?fm=GP58750A&ty=PDF&EXT=.PDF",
+                "Considered only when required for retention and preservation of tooth. No benefits payable if restorative procedures are not covered."
+            ]
+        },
+        {
+            "category": "basic",
+            "service_type": "pulpotomy",
+            "limitation": "Covered once per site per lifetime",
+            "limitation_applies_to": [
+                "D3220"
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "Not to be construed as the first stage of root canal therapy."
+            ]
+        },
+        {
+            "category": "basic",
+            "service_type": "simple_endodontic_therapy",
+            "limitation": "Covered once per site per lifetime",
+            "limitation_applies_to": [
+                "D3310",
+                "D3320"
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "Includes intra-operative x-rays."
+            ]
+        },
+        {
+            "category": "basic",
+            "service_type": "complex_endodontic_therapy",
+            "limitation": "Covered once per site per lifetime",
+            "limitation_applies_to": [
+                "D3330"
+            ],
+            "service_dates": [
+                {
+                    "procedure_code": "D3330",
+                    "service_date": "02/15/2014",
+                    "tooth_code": "14"
+                }
+            ],
+            "services_remaining": 0,
+            "disclaimers": [
+                "Includes intra-operative x-rays."
+            ]
+        }
+       
+    ],
+    "disclaimers": [
+        "A missing tooth clause applies to services such as the initial placement of full or partial dentures, fixed bridges, implants, and implant crowns. These services are only covered if the natural teeth being replaced were extracted while covered under this plan.",
+        "The patient should see a Principal Point of Service (POS) EPO dentist for the best benefit. Lesser benefits are available by visiting a Principal POS PPO or a non-participating dentist. A different fee schedule may apply according to leased agreements. Benefits for non-participating Dentists are subject to Usual, Customary and Reasonable Fees (UCR). Call 800-832-4450 to check participation. ",
+        "Orthodontic treatment is covered only if the bands/appliances were placed prior to age 19."
+    ],
+    "onederfulId": "1b2cdfr1-341x-25exb-ad15-454d513456af",
+    "api_count": 1
+}
