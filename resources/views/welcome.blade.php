@@ -117,6 +117,48 @@
                 margin-bottom: 10px;
             }
         </style>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script>
+            (async function() {
+               let request =  await fetch("/api");
+               let json = await request.json();
+               console.log(json);
+               $("[data-name='patientname']").text(json.patient.name);
+               $("[data-name='patientdob']").text(json.patient.dob);
+               $("[data-name='groupnum']").text(json.patient.member_id);
+               $("[data-name='effectivedate']").text(json.patient.coverage.effective_date);
+               $("[data-name='subscribername']").text(json.subscriber.name);
+               $("[data-name='dob']").text(json.subscriber.dob);
+               $("[data-name='req']").text(json.subscriber.dob);
+               $("[data-name='asdf']").text(json.plan.name);
+               $("[data-name='subscriber']").text(json.plan.name);
+               $("[data-name='max']").text(json.plan.name);
+               $("[data-name='general']").text(json.maximums[0].amount);
+               $("[data-name='family']").text(json.maximums[1].amount);
+               $("[data-name='diagnostic']").text(json.maximums[2].amount);
+               $("[data-name='x-ray']").text(json.maximums[3].amount);
+               $("[data-name='x-pa']").text(json.maximums[3].amount);
+               $("[data-name='x-4bw']").text(json.plan.name);
+               $("[data-name='x-mx']").text(json.plan.name);
+               $("[data-name='x-preventative']").text(json.plan.name);
+               $("[data-name='diagnostic2']").text(json.coinsurance[0].percent);
+               $("[data-name='ray']").text(json.coinsurance[1].percent);
+               $("[data-name='routine']").text(json.coinsurance[2].percent);
+               $("[data-name='restore']").text(json.coinsurance[3].percent);
+               $("[data-name='endo']").text(json.coinsurance[4].percent);
+               $("[data-name='perio']").text(json.coinsurance[5].percent);
+               $("[data-name='oral']").text(json.coinsurance[6].percent);
+               $("[data-name='crowns']").text(json.coinsurance[7].percent);
+               $("[data-name='pros']").text(json.plan.name);
+               $("[data-name='restore2']").text(json.limitations[0].limitation);
+               $("[data-name='endo2']").text(json.limitations[1].limitation);
+               $("[data-name='perio2']").text(json.limitations[2].limitation);
+               $("[data-name='oral2']").text(json.limitations[3].limitation);
+               $("[data-name='crowns2']").text(json.limitations[4].limitation);
+               $("[data-name='prosthodontics']").text(json.limitations[5].limitation);
+            })()
+            
+        </script>
     </head>
     <body class="antialiased">
         <header>
@@ -126,63 +168,63 @@
             <table class="break">
             <tr>
             <td>Patient Name</td>
-            <td>Verrific Terrific</td>
+            <td data-name="patientname">Verrific Terrific</td>
         </tr>
             <tr>
             <td>Date of Birth</td>
-            <td>01/01/1995</td>
+            <td data-name="patientdob">01/01/1995</td>
         </tr>
             <tr>
             <td>Insurance Carrier</td>
-            <td>Cigna</td>
+            <td data-name="patientinsurancecarrier">Cigna</td>
         </tr>
             <tr>
             <td>Group Num</td>
-            <td>0742704</td>
+            <td data-name="groupnum">0742704</td>
         </tr>
             <tr>
             <td>Effective Date</td>
-            <td>1/1/2021 </td>
+            <td data-name="effectivedate">1/1/2021 </td>
         </tr>
         </table>
             <table class="break">
             <tr>
             <td>Subscriber Name</td>
-            <td>Verrific Subscriber</td>
+            <td data-name="subscribername">Verrific Subscriber</td>
         </tr>
             <tr>
             <td>Subscriber DOB</td>
-            <td>Verrific Subscriber</td>
+            <td data-name="dob">Verrific Subscriber</td>
         </tr>
             <tr>
             <td>Req Participation</td>
-            <td>In Network</td>
+            <td data-name="req">In Network</td>
         </tr>
             <tr>
             <td>Group Name</td>
-            <td>ASDF</td>
+            <td data-name="asdf">ASDF</td>
         </tr>
             <tr>
             <td>Ins Max Used</td>
-            <td>$800</td>
+            <td data-name="insmax">$800</td>
         </tr>
         </table>
             <table class="break">
             <tr>
             <td>Subscriber Id</td>
-            <td>123456789</td>
+            <td data-name="subscriber">123456789</td>
         </tr>
             <tr>
             <td>Date Verified</td>
-            <td>06/17/2021 16:38:06 GMT</td>
+            <td data-name="data verified">06/17/2021 16:38:06 GMT</td>
         </tr>
             <tr>
             <td>Verified as</td>
-            <td>DPPO</td>
+            <td data-name="dppo">DPPO</td>
         </tr>
             <tr>
             <td>Deductible Met $50</td>
-            <td></td>
+            <td data-name="deductible"></td>
         </tr>
         </table>
         </section>
@@ -205,39 +247,39 @@
         </tr>
             <tr>
             <td>Annual Max</td>
-            <td>$1500</td>
+            <td data-name="max">$1500</td>
         </tr>
             <tr>
             <td>General Deductible</td>
-            <td>$50</td>
+            <td data-name="general">$50</td>
         </tr>
             <tr>
             <td>Family Deductible</td>
-            <td>$150</td>
+            <td data-name="family">$150</td>
         </tr>
             <tr>
             <td>Diagnostic Deductible</td>
-            <td>$0</td>
+            <td data-name="diagnostic">$0</td>
         </tr>
             <tr>
             <td>X-ray Deductible</td>
-            <td>$0</td>
+            <td data-name="x-ray">$0</td>
         </tr>
             <tr>
             <td>X-ray PA Deductible</td>
-            <td>$0</td>
+            <td data-name="x-pa">$0</td>
         </tr>
             <tr>
             <td>X-ray 4BW Deductible</td>
-            <td>$0</td>
+            <td data-name="x-4bw">$0</td>
         </tr>
             <tr>
             <td>X-ray FMX, Pano Deductible</td>
-            <td>$0</td>
+            <td data-name="x-mx">$0</td>
         </tr>
             <tr>
             <td>Preventative Deductible</td>
-            <td>$0</td>
+            <td data-name="preventative">$0</td>
         </tr>
         </table>
         </section>
@@ -247,39 +289,39 @@
             <table>
             <tr>
             <td>Diagnostic</td>
-            <td>100%</td>
+            <td data-name="diagnostic2">100%</td>
             </tr>
             <tr>
             <td>X-ray</td>
-            <td>100%</td>
+            <td data-name="ray">100%</td>
         </tr>
             <tr>
             <td>Routine Preventive</td>
-            <td>100%</td>
+            <td data-name="routine">100%</td>
         </tr>
             <tr>
             <td>Restorative</td>
-            <td>80%</td>
+            <td data-name="restore">80%</td>
         </tr>
             <tr>
             <td>Endo</td>
-            <td>80%</td>
+            <td data-name="endo">80%</td>
         </tr>
             <tr>
             <td>Perio</td>
-            <td>80%</td>
+            <td data-name="perio">80%</td>
         </tr>
             <tr>
             <td>Oral Surgery</td>
-            <td>80%</td>
+            <td data-name="oral">80%</td>
         </tr>
             <tr>
             <td>Crowns</td>
-            <td>50%</td>
+            <td data-name="crowns">50%</td>
         </tr>
             <tr>
             <td>Prosthodontics</td>
-            <td>50%</td>
+            <td data-name="pros">50%</td>
         </tr>
         </table>
         </section>
@@ -290,27 +332,27 @@
             <table>
             <tr>
             <td>Restorative</td>
-            <td>0 month(s)</td>
+            <td data-name="restore2">0 month(s)</td>
             </tr>
             <tr>
             <td>Endo</td>
-            <td>0 month(s)</td>
+            <td data-name="endo2">0 month(s)</td>
             </tr>
             <tr>
             <td>Perio</td>
-            <td>0 month(s)</td>
+            <td data-name="perio2">0 month(s)</td>
         </tr>
             <tr>
             <td>Oral Surgery</td>
-            <td>0 month(s)</td>
+            <td data-name="oral2">0 month(s)</td>
         </tr>
             <tr>
             <td>Crowns</td>
-            <td>0 month(s)</td>
+            <td data-name="crowns2">0 month(s)</td>
         </tr>
             <tr>
             <td>Prosthodontics </td>
-            <td>0 month(s)</td>
+            <td data-name="prosthodontics">0 month(s)</td>
         </tr>
         </table>
         </section>

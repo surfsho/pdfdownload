@@ -17,5 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/report', function () {
+    return view('report');
+});
+
 Route::get('/api', [ShowController::class,"index"]);
-Route::get('/eligblity',[ShowController::class,"getEligiblity"]);
+Route::get('/eligblity',[ShowController::class,"postEligbility"]);
